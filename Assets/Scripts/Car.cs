@@ -1,0 +1,43 @@
+using System;
+using UnityEngine;
+
+public class Car : MonoBehaviour
+{
+    private float moveSpeed = 1f;
+    [SerializeField] private Path currentPath;
+    
+    private Vector3 _targetPosition;
+    private int _currentWaypoint;
+
+    private void Awake()
+    {
+        currentPath = GameObject.Find("Path1").GetComponent<Path>();
+    }
+
+    private void OnEnable()
+    {
+        _currentWaypoint = 0;
+        _targetPosition = currentPath.GetPosition(_currentWaypoint);
+    }
+
+    private void Update()
+    {
+        // move towards target position
+        transform.position = Vector3.MoveTowards(transform.position, _targetPosition, moveSpeed * Time.deltaTime);
+        
+        // when target reached, set new target position
+        float relativeDistance = (transform.position - _targetPosition).magnitude;
+        if (relativeDistance < 0.01f)
+        {
+            if (_currentWaypoint < currentPath.Waypoints.Length - 1)
+            {
+                _currentWaypoint++;
+                _targetPosition = currentPath.GetPosition(_currentWaypoint);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+        }
+    }
+}
