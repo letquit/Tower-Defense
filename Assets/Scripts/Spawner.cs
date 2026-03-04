@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Spawner : MonoBehaviour
         _spawnTimer -= Time.deltaTime;
         if (_spawnTimer <= 0)
         {
+            _spawnInterval = Random.Range(.7f, 1.5f);
             _spawnTimer = _spawnInterval;
             SpawnEnemy();
         }
