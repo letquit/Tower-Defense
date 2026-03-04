@@ -5,7 +5,8 @@ public class Spawner : MonoBehaviour
 {
     private float _spawnTimer;
     private float _spawnInterval = 1f;
-    public GameObject Prefab;
+
+    [SerializeField] private ObjectPooler pool;
 
     private void Update()
     {
@@ -19,7 +20,8 @@ public class Spawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        GameObject spawnedObject = GameObject.Instantiate(Prefab);
+        GameObject spawnedObject = pool.GetPooledObject();
         spawnedObject.transform.position = transform.position;
+        spawnedObject.SetActive(true);
     }
 }
