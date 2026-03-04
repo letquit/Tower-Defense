@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Car : MonoBehaviour
 {
+    private Animator animator;
     private float moveSpeed = 1f;
     [SerializeField] private Path currentPath;
     
@@ -12,6 +13,7 @@ public class Car : MonoBehaviour
     private void Awake()
     {
         currentPath = GameObject.Find("Path1").GetComponent<Path>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -26,8 +28,12 @@ public class Car : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, _targetPosition, moveSpeed * Time.deltaTime);
         
         // when target reached, set new target position
-        float relativeDistance = (transform.position - _targetPosition).magnitude;
-        if (relativeDistance < 0.01f)
+        Vector3 relativeDistance = transform.position - _targetPosition;
+        
+        animator.SetFloat("speedX", relativeDistance.x * -1);
+        animator.SetFloat("speedY", relativeDistance.y * -1);
+        
+        if (relativeDistance.magnitude < 0.01f)
         {
             if (_currentWaypoint < currentPath.Waypoints.Length - 1)
             {
