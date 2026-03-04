@@ -1,9 +1,12 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Car : MonoBehaviour
 {
     private Animator animator;
+    [SerializeField] private AnimatorOverrideController[] skins;
+    
     private float moveSpeed = 1f;
     [SerializeField] private Path currentPath;
     
@@ -20,6 +23,7 @@ public class Car : MonoBehaviour
     {
         _currentWaypoint = 0;
         _targetPosition = currentPath.GetPosition(_currentWaypoint);
+        animator.runtimeAnimatorController = skins[Random.Range(0, skins.Length)];
     }
 
     private void Update()

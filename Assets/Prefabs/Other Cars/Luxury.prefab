@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3017413891905188161
+--- !u!1 &6191361182757132795
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4039220665989662791}
-  - component: {fileID: 3205831293460665892}
-  - component: {fileID: 5279396991269404616}
-  - component: {fileID: 595644744436964582}
+  - component: {fileID: 7493774946725688015}
+  - component: {fileID: 722584326157622375}
+  - component: {fileID: 6838156638620469794}
   m_Layer: 0
-  m_Name: Car
+  m_Name: Luxury
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4039220665989662791
+--- !u!4 &7493774946725688015
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3017413891905188161}
+  m_GameObject: {fileID: 6191361182757132795}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -34,14 +33,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3205831293460665892
+--- !u!212 &722584326157622375
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3017413891905188161}
+  m_GameObject: {fileID: 6191361182757132795}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -83,43 +82,27 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 36874786511525618, guid: 28e3cd603c887194188aa7d3c701d2d4, type: 3}
+  m_Sprite: {fileID: -159776919582945571, guid: 63e9ef51abbcda4408496602444eefb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.65625, y: 0.325}
+  m_Size: {x: 0.56875, y: 0.28125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &5279396991269404616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3017413891905188161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 423c246aedff5e742a61e7054e84113b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Car
-  skins:
-  - {fileID: 22100000, guid: 4374a4a21a67ace4da22f3b561d64884, type: 2}
-  - {fileID: 22100000, guid: dd6d5e9d3c71db74ea861d9f70399a99, type: 2}
-  currentPath: {fileID: 0}
---- !u!95 &595644744436964582
+--- !u!95 &6838156638620469794
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3017413891905188161}
+  m_GameObject: {fileID: 6191361182757132795}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 42029fcf4ec393a4fab79d778515c421, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0bce02e94ee5ef74aac5fc141aba9ed7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
